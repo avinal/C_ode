@@ -1,0 +1,13 @@
+*.exe
+*.ilk
+*.obj
+*.pdb
+*.pdb
+*.fits
+*.fit
+boost/*
+*.dll
+*.lib
+*.txt
+*.cpp
+

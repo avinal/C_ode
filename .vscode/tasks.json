@@ -1,0 +1,44 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Cbuild",
+            "windows": {
+                "command": "cl",
+                "args": [
+                    "/Zi",
+                    "/EHsc",
+                    "${file}",
+                    "/Fe:",
+                    "${fileDirname}/${fileBasenameNoExtension}.exe",
+                    "cfitsio.lib",
+                    "/I",
+                    "D:/C/boost"
+                ]
+            },
+            "linux": {
+                "command": "g++",
+                "args": [
+                    "-Wall",
+                    "-g",
+                    "-I",
+                    "${workspaceFolder}/boost",
+                    "${fileBasename}",
+                    "-o",
+                    "${fileBasenameNoExtension}"
+                ]
+            },
+            "problemMatcher": [
+                "$msCompile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always"
+            }
+        }
+    ]
+}
