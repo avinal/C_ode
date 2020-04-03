@@ -3,11 +3,12 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "D:\\C_ode\\boost"
             ],
             "defines": [
                 "_DEBUG",
-            "UNICODE",
+                "UNICODE",
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.18362.0",
