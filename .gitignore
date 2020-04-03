@@ -8,6 +8,5 @@
 boost/*
 *.dll
 *.lib
-*.txt
 *.cpp
 
