@@ -2,7 +2,7 @@
 D:\C\C_ode\postorder.cpp
 Avinal Kumar
 May 06, 2020
-Creating a binary search tree.
+Creating a binary  tree.
 PostOrder traversal of tree without using recursion
 */
 #include <iostream>
