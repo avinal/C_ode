@@ -93,11 +93,16 @@
         "queue": "cpp",
         "stack": "cpp",
         "strstream": "cpp",
-        "*.ipp": "cpp"
+        "*.ipp": "cpp",
+        "any": "cpp",
+        "bit": "cpp",
+        "charconv": "cpp",
+        "rope": "cpp",
+        "slist": "cpp",
+        "variant": "cpp"
     },
     "C_Cpp.dimInactiveRegions": true,
     "C_Cpp.autocomplete": "Default",
     "C_Cpp.enhancedColorization": "Enabled",
     "C_Cpp.default.cppStandard": "c++20",
-    "cmake.configureOnOpen": false,
 }

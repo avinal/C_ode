@@ -12,9 +12,6 @@
                     "${file}",
                     "/Fe:",
                     "${fileDirname}/${fileBasenameNoExtension}.exe",
-                    "cfitsio.lib",
-                    "/I",
-                    "D:/C/boost"
                 ]
             },
             "linux": {
@@ -22,15 +19,13 @@
                 "args": [
                     "-Wall",
                     "-g",
-                    "-I",
-                    "${workspaceFolder}/boost",
                     "${fileBasename}",
                     "-o",
-                    "${fileBasenameNoExtension}"
+                    "${fileDirname}/build/${fileBasenameNoExtension}"
                 ]
             },
             "problemMatcher": [
-                "$msCompile"
+                "$gcc"
             ],
             "group": {
                 "kind": "build",

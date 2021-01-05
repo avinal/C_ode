@@ -1,38 +1,46 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <utility>
 using namespace std;
 int main()
 {
-    int n, count = 0;
-    int k = 0, s = 0;
-    cin >> n;
-    long brr[n], var;
-    vector<int> vect;
-    for (int i = 0; i < n; i++)
+    int test, it = 0;
+    cin >> test;
+    while (it != test)
     {
-        cin >> var;
-        vect.push_back(var);
-    }
-
-    for (int i = 0; i < n; i++)
-    {
-        var = vect[i];
-        vect[i] = 0;
-
-        //sort(vect.begin(),vect.end());
-        k = *max_element(vect.begin(), vect.end());
-        s = accumulate(vect.begin(), vect.end(), 0) - k;
-
-        if (k == s)
+        int n, in;
+        vector<pair<int, bool>> v;
+        int max = -1;
+        cin >> n;
+        for (int i = 0; i < n; i++)
         {
-            count++;
-            brr[count] = i + 1;
+            cin >> in;
+            if (max < in)
+            {
+                max = in;
+            }
+            v.emplace_back(in, max == in);
         }
-        vect[i] = var;
+        int count = 0;
+        for (int j = 0; j < n; j++)
+        {
+            if (v[j].second && v[j - 1].first < v[j].first)
+            {
+                if (j == n - 1)
+                {
+                    count++;
+                }
+                else if (v[j].first > v[j + 1].first)
+                    count++;
+            }
+            else if (j == 0 && v[j].first > v[j + 1].first)
+            {
+                count++;
+            }
+        }
+        it++;
+        cout << "Case #" << it << ": " << count << (it != test) ? "\n" : "";
     }
-    cout << count << endl;
-    for (int t = 1; t <= count; t++)
-    {
-        cout << brr[t] << " ";
-    }
+
     return 0;
 }

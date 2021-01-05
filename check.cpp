@@ -1,39 +1,36 @@
-#include <iostream>
-#include <fstream>
-#include <boost/algorithm/string/trim.hpp>
+#include <iostream>   // std::cout
+#include <vector> 
+#include <unordered_map>
+#include<algorithm>    // std::string, std::stoi
+using namespace std;
 
-int main(int argc, char const *argv[])
-{
-    std::string input;
-    std::cin >> input;
-    std::fstream file(input.c_str(), std::ios::in | std::ios::binary);
-    char cutset[80];
-    while (true)
-    {
-        
-        file.read(cutset, 80);
-        int position = file.tellg();
-        // read 80 character
-        std::string word(cutset);
-
-        std::string key_; /*Seperates keyword and value*/
-
-        key_ = word.substr(0, 8);
-        boost::trim(key_);
-        if (!key_.compare("END")) //Stop reading condition
-        {
-            std::cout << key_ << " " << position << std::endl;
-        }
-        if (!key_.compare("XTENSION")) //Stop reading condition
-        {
-            file.seekg(0, std::ios::end);
-            
-            std::cout << key_ << " " << position << std::endl;
-            std::cout << file.tellg() << std::endl;
-            file.close();
-            break;
+int solution(vector<int> &A) {
+    // write your code in C++14 (g++ 6.2.0)
+    vector<int> cumsum;
+    int sum=0;
+    for(int k: A){
+        sum+=k;
+        cumsum.push_back(sum);
+    }
+    unordered_map<int, int> storesum;
+    for(int j: cumsum){
+        if(storesum.find(j)!=storesum.end()){
+            storesum[j]+=1;
+        }else{
+            storesum.insert({j,1});
         }
     }
-    system("pause");
-    return 0;
+    sum=0;
+    for_each(storesum.begin(),storesum.end(), [&](auto par)
+    {
+        sum+=(par.second*(par.second-1)/2);
+    });
+    
+    return sum;
+}
+
+int main ()
+{
+    vector<int> v{2, -2, 3, 0, 4, -7};
+    cout<<solution(v);
 }
