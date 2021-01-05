@@ -1,1 +1,0 @@
-This program uses the grt function  ti continue reading anf writing 

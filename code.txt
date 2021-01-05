@@ -1,1 +1,0 @@
-HISTORY   The following throughput tables were used: crotacomp$hst_ota_005.tab, 
