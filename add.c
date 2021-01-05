@@ -1,6 +1,7 @@
 #include <stdio.h>
 int main()
 {
-    printf("b\n");
+    int a = 47, b = 13;
+    printf("%d\n", a + b);
     return 0;
 }
